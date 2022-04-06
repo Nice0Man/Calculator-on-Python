@@ -28,10 +28,10 @@ def main():
             raise SystemExit()
 
         # Custom commands support
-        if expression.lower() == "help":
+        if expression.strip().lower() == "help":
             print(cfg.USAGE)
             continue
-        if expression.lower() in {"quit", "exit"}:
+        if expression.strip().lower() in {"quit", "exit"}:
             raise SystemExit()
 
         # Expression calculation and error handling
