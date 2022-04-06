@@ -1,5 +1,7 @@
 import math
 import my_math
+import cmath
+import fractions
 
 # Это обязательно удали!
 # Все что будет написано в коментарриях на английском оставь. Инфа на русском чисто для тебя.
@@ -10,6 +12,14 @@ math_dict = {
     name: exp for name, exp in math.__dict__.items() if not name.startswith("__")
 }  # это словарь
 
+c_math = {
+    name: exp for name, exp in cmath.__dict__.items() if not name.startswith("__") if not name.startswith("__") and not name.startswith("_")
+}
+
+fractions_math = {
+    name: exp for name, exp in fractions.__dict__.items() if not name.startswith("__") if not name.startswith("__") and not name.startswith("_")
+}
+
 my_math_dict = {
     name: exp for name, exp in my_math.__dict__.items() if not name.startswith("__") if not name.startswith("common")
 }
@@ -19,6 +29,8 @@ my_math_dict = {
 # вроде как это назыается мэппинг
 
 math_dict.update(my_math_dict)
+math_dict.update(c_math)
+math_dict.update(fractions_math)
 
 ALLOWED_NAMES = math_dict
 
